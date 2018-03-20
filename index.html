@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>#TEMPLATE#</title>
+  <!-- BOOTSTRAP 4.0.0 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- CUSTOM STYLESHEET -->
+  <link href="css/styles.css" rel="stylesheet" type="text/css" />
+  <!-- JQUERY 3.1.1 -->
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+  <!-- CUSTOM JAVASCRIPT -->
+  <script src="js/scripts.js"></script>
+</head>
+<body>
+  <div class="container">
+
+    <header class="row">
+      <h1 class="col-12">#APPNAME#</h1>
+    </header>
+
+    <div class="row">
+
+      <div class="col-3">
+        <div class="info-container">
+          <h4 class="padding-bottom">
+            About Bank Account
+          </h4>
+          <p class="padding-bottom">
+            created by<br />
+            Johnny Ray Alt
+          </p>
+          <p>
+            Submitted for review #DATE#
+          </p>
+        </div>
+      </div>
+
+      <!-- APP CONTAINER -->
+      <div class="col-9">
+
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <h3>Credit Union</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+            <!-- Form One -->
+            <form id="formOne">
+              <div class="col-6">
+                <h4>Register a new account</h4>
+                <label for="name">Name:</label>
+                <input type="text" id="name" />
+                <label for="initialDeposit">Initial Deposit:</label>
+                <input type="text" id="initialDeposit" />
+                <input type="submit">
+              </div>
+            </form>
+
+            <!-- Form Two -->
+            <form id="formTwo">
+              <div class="col-6">
+                <h4>Deposit or withdraw funds</h4>
+                <label for="depositAmount">Deposit Amount</label>
+                <input type="text" id="depositAmount" />
+                <label for="withdrawalAmount">Withdrawal Amount</label>
+                <input type="text" id="withdrawalAmount" />
+                <input type="submit" id="formUpdate">
+              </div>
+            </form>
+          </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <p>Current Balance</p>
+              <div>
+                <ul id="displayCurrentBalance">
+
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</body>
+</html>
