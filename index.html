@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>#TEMPLATE#</title>
+  <title>Bank Account</title>
   <!-- BOOTSTRAP 4.0.0 -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <!-- CUSTOM STYLESHEET -->
@@ -16,78 +16,92 @@
   <div class="container">
 
     <header class="row">
-      <h1 class="col-12">#APPNAME#</h1>
+      <h1 class="col-12">Bank Account</h1>
     </header>
 
     <div class="row">
 
-      <div class="col-3">
+      <div class="col-2">
         <div class="info-container">
-          <h4 class="padding-bottom">
+          <h4 >
             About Bank Account
           </h4>
           <p class="padding-bottom">
             created by<br />
             Johnny Ray Alt
           </p>
-          <p>
+          <!-- <p>
             Submitted for review #DATE#
-          </p>
+          </p> -->
         </div>
       </div>
 
       <!-- APP CONTAINER -->
-      <div class="col-9">
+      <div class="app-body" class="col-10" width="100%">
+        <!-- Header -->
+        <div class="row">
+          <div class="col-lg-12">
+            <h3 class="app-header">Credit Union</h3>
+          </div>
+        </div>
 
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <h3>Credit Union</h3>
+        <!-- Body -->
+        <div class="row">
+            <div class="col-6 form-group">
+              <!-- Form One -->
+              <form id="formOne">
+                <div class="form-container">
+                  <h4 class="form-header">Register a new account</h4>
+
+                  <div class="form-field">
+                    <label class="form-label" for="name">Name:</label>
+                    <input class="form-input" type="text" id="name" />
+                  </div>
+
+                  <div class="form-field">
+                    <label class="form-label" for="initialDeposit">Initial Deposit:</label>
+                    <input class="form-input" type="number" min="0" value="0" id="initialDeposit" />
+                  </div>
+
+                  <button class="form-button" type="submit">👍</button>
+                </div>
+              </form>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-12">
-            <!-- Form One -->
-            <form id="formOne">
-              <div class="col-6">
-                <h4>Register a new account</h4>
-                <label for="name">Name:</label>
-                <input type="text" id="name" />
-                <label for="initialDeposit">Initial Deposit:</label>
-                <input type="text" id="initialDeposit" />
-                <input type="submit">
-              </div>
-            </form>
 
-            <!-- Form Two -->
-            <form id="formTwo">
-              <div class="col-6">
-                <h4>Deposit or withdraw funds</h4>
-                <label for="depositAmount">Deposit Amount</label>
-                <input type="text" id="depositAmount" />
-                <label for="withdrawalAmount">Withdrawal Amount</label>
-                <input type="text" id="withdrawalAmount" />
-                <input type="submit" id="formUpdate">
-              </div>
-            </form>
-          </div>
-          </div>
-          <div class="row">
-            <div class="col-12">
-              <p>Current Balance</p>
-              <div>
-                <ul id="displayCurrentBalance">
+            <div class="col-6 form-group">
+              <!-- Form Two -->
+              <form id="formUpdate">
+                <div class="form-container">
+                  <h4 class="form-header">Deposit or withdraw funds</h4>
 
-                </ul>
-              </div>
+                  <div class="form-field">
+                    <label class="form-label" for="depositAmount">Deposit Amount:</label>
+                    <input class="form-input" type="number" min="0" value="0" id="depositAmount" />
+                  </div>
+
+                  <div class="form-field">
+                    <label class="form-label" for="withdrawalAmount">Withdrawal Amount:</label>
+                    <input class="form-input" type="number" min="0" value="0" id="withdrawalAmount" />
+                  </div>
+
+                  <button class="form-button" type="submit" id="formUpdare">👎</button>
+                </div>
+              </form>
+            </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12 user-information-container">
+            <h3>User Information</h3>
+            <div class="current-information">
+              <p class="user-information">Name: <span id="userName"></span></p>
+              <p class="user-information">Current Balance: <span id="currentBalance"></span></p>
             </div>
           </div>
         </div>
 
       </div>
-
     </div>
-
   </div>
 </body>
 </html>
