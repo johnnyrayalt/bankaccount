@@ -12,18 +12,21 @@ User.prototype.adjust = function() {
   return this.balance += (this.deposit - this.withdrawal);
 };
 
-
+function greyArea() {
+  $("#formOne").addClass("grey");
+  $('input.initial-input').prop('disabled', 'true');
+}
 
 $(document).ready(function() {
 
   $("form#formOne").submit(function(event) {
     event.preventDefault();
 
+    greyArea();
+
     var name = $("input#name").val()
     var initialDeposit = parseInt($("#initialDeposit").val());
     var user = new User(name, initialDeposit);
-
-
 
     $("#formUpdate").submit(function(event) {
       event.preventDefault();
@@ -35,13 +38,13 @@ $(document).ready(function() {
 
       user.adjust();
 
-      $("#currentBalance").text(user.balance);
+      $("#currentBalance").text("$" + user.balance);
 
       reset();
     });
 
-    $("#userName").text(user.name);
-    $("#currentBalance").text(user.balance);
+      $("#userName").text(user.name);
+      $("#currentBalance").text("$" + user.balance);
 
   });
 

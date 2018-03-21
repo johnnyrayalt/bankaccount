@@ -46,3 +46,12 @@ form, .form-button{
 .form-button {
   font-size:30px;
 }
+
+.user-information-container p, .user-information-container h3 {
+  color:white;
+}
+
+.grey {
+  width: 100%;
+  opacity: .5;
+}
