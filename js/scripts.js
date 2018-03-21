@@ -1,42 +1,38 @@
-function User(name, initialDeposit, depositAmount) {
+function User(name, balance) {
   this.name = name;
-  this.initialDeposit = initialDeposit;
-  this.depositAmount = depositAmount;
+  this.balance = balance;
 }
 
-User.prototype.add = function() {
-  return this.initialDeposit + this.depositAmount;
+User.prototype.adjust = function() {
+  return this.balance += (this.deposit - this.withdrawal);
 };
 
 
 
 $(document).ready(function() {
 
-  $("#formOne").submit(function(event) {
+  $("form#formOne").submit(function(event) {
     event.preventDefault();
 
     var name = $("input#name").val()
     var initialDeposit = parseInt($("#initialDeposit").val());
-    var user = new User(name, initialDeposit, depositAmount);
-    console.log(user.name + " " + user.initialDeposit);
+    var user = new User(name, initialDeposit);
 
     $("ul#displayCurrentBalance").append("<li>" + initialDeposit + "</li>");
 
-    console.log(user.name + " " + user.initialDeposit);
 
     $("#formUpdate").click(function(event) {
 
       event.preventDefault();
 
+      var deposit = parseInt($("#depositAmount").val());
+      var withdrawal = parseInt($("#withdrawalAmount").val());
+      user.deposit = deposit;
+      user.withdrawal = withdrawal;
 
-      // PROBLEM CHILD
-      var depositAmount = parseInt($("#depositAmount").val());
-      // var withdrawalAmount = parseInt($("#withdrawalAmount").val());
+      user.adjust();
 
-      console.log(user);
-      console.log(depositAmount);
-
-      $("ul#displayCurrentBalance").append("<li>" + initialDeposit.val() + depositAmount.val() + "</li>");
+      $("ul#displayCurrentBalance").append("<li>" + user.balance + "</li>");
 
     });
   });
