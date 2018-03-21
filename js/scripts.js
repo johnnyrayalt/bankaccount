@@ -3,6 +3,11 @@ function User(name, balance) {
   this.balance = balance;
 }
 
+function reset() {
+  $("#depositAmount").val(0);
+  $("#withdrawalAmount").val(0);
+}
+
 User.prototype.adjust = function() {
   return this.balance += (this.deposit - this.withdrawal);
 };
@@ -18,11 +23,9 @@ $(document).ready(function() {
     var initialDeposit = parseInt($("#initialDeposit").val());
     var user = new User(name, initialDeposit);
 
-    $("ul#displayCurrentBalance").append("<li>" + initialDeposit + "</li>");
 
 
-    $("#formUpdate").click(function(event) {
-
+    $("#formUpdate").submit(function(event) {
       event.preventDefault();
 
       var deposit = parseInt($("#depositAmount").val());
@@ -32,9 +35,14 @@ $(document).ready(function() {
 
       user.adjust();
 
-      $("ul#displayCurrentBalance").append("<li>" + user.balance + "</li>");
+      $("#currentBalance").text(user.balance);
 
+      reset();
     });
+
+    $("#userName").text(user.name);
+    $("#currentBalance").text(user.balance);
+
   });
 
 
